@@ -1,0 +1,12 @@
+.Media {
+  cursor: pointer;
+  margin-right: 15px;
+  display: inline-block;
+  width: 260px;
+  vertical-align: top;
+}
+
+.Media-title {
+  margin: 5px 0 0 0;
+  white-space: normal;
+}
