@@ -1,4 +1,4 @@
-// console.log("Hello World!");
+import { createStore } from 'redux';
 
 const $form = document.getElementById('form');
 
@@ -10,3 +10,21 @@ function handleSubmit(event) {
   const title = data.get('title');
   console.log(title);
 }
+
+const initialState = [
+  {
+    "title": "Digital Love",
+  },
+  {
+    "title": "A Little Less Conversation"
+  },
+  {
+    "title": "Imagine"
+  }
+];
+
+const store = createStore(
+  (state) => state,
+  initialState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
