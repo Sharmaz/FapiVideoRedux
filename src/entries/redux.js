@@ -22,15 +22,24 @@ const initialState = [
     "title": "Digital Love",
   },
   {
-    "title": "A Little Less Conversation"
+    "title": "A Little Less Conversation",
   },
   {
-    "title": "Imagine"
+    "title": "Imagine",
   }
 ];
 
+const reducer = function(state, action) {
+  switch (action.type) {
+    case 'ADD_SONG':
+      return [...state, action.payload];
+    default:
+      return state;
+  }
+};
+
 const store = createStore(
-  (state) => state,
+  reducer,
   initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
@@ -44,4 +53,4 @@ playlist.forEach((item) => {
   const template = document.createElement('p');
   template.textContent = item.title;
   $container.appendChild(template);
-})
+});
